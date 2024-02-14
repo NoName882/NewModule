@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-    int RotationSpeed = 23903;
+    int RotationSpeed = 1000;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +13,6 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y + Time.deltaTime * RotationSpeed, 0);
+        transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y + Time.deltaTime * RotationSpeed * Input.GetAxis("Mouse X"), 0);
     }
 }
