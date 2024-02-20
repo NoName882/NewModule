@@ -5,6 +5,10 @@ using UnityEngine;
 public class CameraRotation : MonoBehaviour
 {
     int RotationSpeed = 1000;
+    int RotationSpeed2 = -200;
+    public float minAngle;
+    public float maxAngle;
+    public Transform CameraAxisTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +18,16 @@ public class CameraRotation : MonoBehaviour
     void Update()
     {
         transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y + Time.deltaTime * RotationSpeed * Input.GetAxis("Mouse X"), 0);
+
+        var newAngleX = CameraAxisTransform.localEulerAngles.x + Time.deltaTime * RotationSpeed2 * Input.GetAxis("Mouse Y");
+
+        if (newAngleX > 180)
+        {
+            newAngleX -= 360;
+        }
+
+        newAngleX = Mathf.Clamp(newAngleX, minAngle, maxAngle);
+
+        CameraAxisTransform.localEulerAngles = new Vector3(newAngleX, 0, 0);
     }
 }
