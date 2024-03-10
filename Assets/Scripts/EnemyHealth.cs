@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Invisible : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
+    public float value = 23903;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,11 @@ public class Invisible : MonoBehaviour
     void Update()
     {
         
+        if (value <= 0)
+        {
+            DestroyObject(gameObject);
+        }
     }
+
+    
 }

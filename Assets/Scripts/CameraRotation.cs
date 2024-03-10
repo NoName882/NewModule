@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-    int RotationSpeed = 1000;
+    int RotationSpeed = 700;
     int RotationSpeed2 = -200;
     public float minAngle;
     public float maxAngle;
