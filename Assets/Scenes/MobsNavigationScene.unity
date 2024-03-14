@@ -697,6 +697,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3581543490544443569, guid: b18f1bc7ae4f16f4098c84bf2596c24f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6110915237365153034, guid: b18f1bc7ae4f16f4098c84bf2596c24f,
         type: 3}
       propertyPath: BallBallSource
@@ -786,6 +791,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217fe20cb65f37e45babdcab003f1d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &816389594 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4945116991304686152, guid: b18f1bc7ae4f16f4098c84bf2596c24f,
+    type: 3}
+  m_PrefabInstance: {fileID: 816389592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &816389595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 744358664795564477, guid: b18f1bc7ae4f16f4098c84bf2596c24f,
+    type: 3}
+  m_PrefabInstance: {fileID: 816389592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &816389596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816389594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e939850ed4e1af34d8c364dfcdfd8ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &880964577
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,6 +861,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1003112459 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2303859654162169500, guid: b18f1bc7ae4f16f4098c84bf2596c24f,
+    type: 3}
+  m_PrefabInstance: {fileID: 816389592}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1009100433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,6 +1854,7 @@ MonoBehaviour:
   - {fileID: 1401620824}
   player: {fileID: 816389593}
   viewAngle: 360
+  damage: 8.9814886e+11
 --- !u!82 &1632541441
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2431,7 +2467,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741bd3071a1c5cf46ad7ad697a3b0197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 243
+  value: 100
+  valueRectTransform: {fileID: 1003112459}
+  gameplayUI: {fileID: 816389595}
+  TheEndOfAllThings: {fileID: 816389594}
 --- !u!1 &2124823654
 GameObject:
   m_ObjectHideFlags: 0

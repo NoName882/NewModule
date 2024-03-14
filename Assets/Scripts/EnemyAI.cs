@@ -12,14 +12,15 @@ public class EnemyAI : MonoBehaviour
     private bool _isPlayerNoticed;
     public float viewAngle;
     private AudioSource vipewvimvpowejvpo;
-    public float damage = 898;
-
+    public float damage = 898148869148;
+    private PlayerHealth _playerHealth;
 
 
     private void Start()
     {
         InitComponentLinks();
         PickNewPatrolPoint();
+        
     }
     private void AttackUpdate()
     {
@@ -27,13 +28,14 @@ public class EnemyAI : MonoBehaviour
         {
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
-                player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime);
+                _playerHealth.DealDamage(damage * Time.deltaTime);
             }
         }
     }
     private void InitComponentLinks()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _playerHealth = player.GetComponent<PlayerHealth>();
     }
     private void Update()
     {
