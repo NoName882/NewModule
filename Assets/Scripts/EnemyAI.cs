@@ -12,13 +12,24 @@ public class EnemyAI : MonoBehaviour
     private bool _isPlayerNoticed;
     public float viewAngle;
     private AudioSource vipewvimvpowejvpo;
-    
+    public float damage = 898;
+
 
 
     private void Start()
     {
         InitComponentLinks();
         PickNewPatrolPoint();
+    }
+    private void AttackUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
+            {
+                player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime);
+            }
+        }
     }
     private void InitComponentLinks()
     {
@@ -28,6 +39,7 @@ public class EnemyAI : MonoBehaviour
     {
         NoticePlayer();
         Chase();
+        AttackUpdate();
         PatrolUpdate();
         Audio();
         
