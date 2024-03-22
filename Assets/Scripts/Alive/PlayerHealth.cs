@@ -18,6 +18,13 @@ public class PlayerHealth : MonoBehaviour
         DrawHealthBar();
     }
 
+    public void AddHealth(float amount)
+    {
+        value += amount;
+        value = Mathf.Clamp(value, 0, _maxValue);
+        DrawHealthBar();
+    }
+
     // Update is called once per frame
     public void DealDamage(float damage)
     {
